@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Portfolio</title>
+    <title>Yusuff Okikiola - Personal Portfolio</title>
+    <link rel="icon" href="https://i.ibb.co/PzW34YHM/IMG-4213.jpg" type="image/jpeg">
     <style>
         /* Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
@@ -40,7 +41,7 @@
             padding: 0 2rem;
         }
 
-        /* Animated Background Blobs */
+        /* Animated Background Eclipses */
         .blob-container {
             position: fixed;
             top: 0;
@@ -53,61 +54,62 @@
 
         .blob {
             position: absolute;
-            background: linear-gradient(to right, rgba(106, 17, 203, 0.5), rgba(37, 117, 252, 0.5));
             border-radius: 50%;
-            opacity: 0.15;
-            filter: blur(40px);
-            animation: morph 20s infinite alternate;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 0 60px 15px rgba(106, 17, 203, 0.4);
+            animation:
+                morph 20s infinite alternate,
+                move 30s infinite alternate,
+                color-shift 10s infinite linear;
         }
 
         .blob:nth-child(1) {
-            width: 450px;
-            height: 450px;
-            top: -100px;
-            left: -150px;
-            animation-duration: 15s;
+            width: 500px; height: 450px;
+            top: -50px; left: -100px;
+            animation-duration: 15s, 25s, 10s;
+            animation-delay: 0s, 0s, 0s;
         }
 
         .blob:nth-child(2) {
-            width: 350px;
-            height: 350px;
-            top: 20%;
-            right: -100px;
-            animation-duration: 12s;
-            animation-delay: 2s;
+            width: 400px; height: 450px;
+            top: 25%; right: -150px;
+            animation-duration: 12s, 30s, 8s;
+            animation-delay: 1s, 5s, 2s;
         }
 
         .blob:nth-child(3) {
-            width: 300px;
-            height: 300px;
-            bottom: -100px;
-            left: 30%;
-            animation-duration: 10s;
-            animation-delay: 4s;
+            width: 350px; height: 400px;
+            bottom: -100px; left: 20%;
+            animation-duration: 10s, 35s, 12s;
+            animation-delay: 2s, 10s, 4s;
         }
 
         .blob:nth-child(4) {
-            width: 250px;
-            height: 250px;
-            bottom: 5%;
-            right: 20%;
-            animation-duration: 18s;
-            animation-delay: 1s;
+            width: 300px; height: 350px;
+            bottom: 10%; right: 25%;
+            animation-duration: 18s, 20s, 7s;
+            animation-delay: 3s, 15s, 1s;
         }
 
         @keyframes morph {
-            0% {
-                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-                transform: rotate(0deg) scale(1);
-            }
-            50% {
-                border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-                transform: rotate(90deg) scale(1.1);
-            }
-            100% {
-                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-                transform: rotate(180deg) scale(1);
-            }
+            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+
+        @keyframes color-shift {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        @keyframes move {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(40px, -60px) rotate(90deg); }
+            50% { transform: translate(-50px, 70px) rotate(180deg); }
+            75% { transform: translate(30px, -30px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
         }
 
         /* Header & Navigation */
@@ -572,7 +574,7 @@
     <header id="home">
         <nav class="navbar">
             <div class="container">
-                <a href="#hero" class="logo">[Your Name]</a>
+                <a href="#hero" class="logo">Yusuff Okikiola</a>
                 <ul class="nav-links">
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -598,10 +600,10 @@
         <section id="hero">
             <div class="container hero-content">
                 <div class="hero-img">
-                    <img src="https://via.placeholder.com/250" alt="Your Name">
+                    <img src="https://i.ibb.co/wZzYwJdf/IMG-1928.jpg" alt="Yusuff Okikiola">
                 </div>
                 <div class="hero-text">
-                    <h1>Hi, I’m [Your Name]</h1>
+                    <h1>Hi, I’m Yusuff Okikiola</h1>
                     <p>A passionate designer and creative developer</p>
                     <a href="#contact" class="btn">Contact Me</a>
                 </div>
@@ -617,7 +619,7 @@
                     </p>
                 </div>
                 <div class="about-img">
-                    <img src="https://via.placeholder.com/150" alt="About Me Picture">
+                    <img src="https://i.ibb.co/PzW34YHM/IMG-4213.jpg" alt="About Me Picture">
                 </div>
             </div>
         </section>
@@ -663,39 +665,51 @@
                 <h2 class="section-title">My Work</h2>
                 <div class="portfolio-grid">
                     <div class="portfolio-card">
-                        <img src="https://via.placeholder.com/400x300/6a11cb/ffffff?text=Project+One" alt="Project One">
+                        <img src="https://i.ibb.co/gZN8wWSW/2025-08-24-20-32-IMG-0831.jpg" alt="Project One">
                         <div class="portfolio-overlay">
                             <h3>Project One</h3>
                         </div>
                     </div>
                     <div class="portfolio-card">
-                        <img src="https://via.placeholder.com/400x300/2575fc/ffffff?text=Project+Two" alt="Project Two">
+                        <img src="https://i.ibb.co/HD7rcK7h/2025-08-24-20-40-IMG-0832.jpg" alt="Project Two">
                         <div class="portfolio-overlay">
                             <h3>Project Two</h3>
                         </div>
                     </div>
                     <div class="portfolio-card">
-                        <img src="https://via.placeholder.com/400x300/6a11cb/ffffff?text=Project+Three" alt="Project Three">
+                        <img src="https://i.ibb.co/yBMtcjC9/2025-08-31-15-37-IMG-0865.png" alt="Project Three">
                         <div class="portfolio-overlay">
                             <h3>Project Three</h3>
                         </div>
                     </div>
                     <div class="portfolio-card">
-                        <img src="https://via.placeholder.com/400x300/2575fc/ffffff?text=Project+Four" alt="Project Four">
+                        <img src="https://i.ibb.co/tPQJ8xyP/2025-08-31-15-36-IMG-0859.png" alt="Project Four">
                         <div class="portfolio-overlay">
                             <h3>Project Four</h3>
                         </div>
                     </div>
                     <div class="portfolio-card">
-                        <img src="https://via.placeholder.com/400x300/6a11cb/ffffff?text=Project+Five" alt="Project Five">
+                        <img src="https://i.ibb.co/yFxm6srj/2025-08-31-15-37-IMG-0860.png" alt="Project Five">
                         <div class="portfolio-overlay">
                             <h3>Project Five</h3>
                         </div>
                     </div>
                     <div class="portfolio-card">
-                        <img src="https://via.placeholder.com/400x300/2575fc/ffffff?text=Project+Six" alt="Project Six">
+                        <img src="https://i.ibb.co/WNxH9xGn/2025-08-31-15-37-IMG-0862.png" alt="Project Six">
                         <div class="portfolio-overlay">
                             <h3>Project Six</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-card">
+                        <img src="https://i.ibb.co/hFdsbdP3/2025-08-31-15-37-IMG-0863.png" alt="Project Seven">
+                        <div class="portfolio-overlay">
+                            <h3>Project Seven</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-card">
+                        <img src="https://i.ibb.co/YF195xGJ/2025-08-31-15-37-IMG-0864.png" alt="Project Eight">
+                        <div class="portfolio-overlay">
+                            <h3>Project Eight</h3>
                         </div>
                     </div>
                 </div>
@@ -733,7 +747,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 [Your Name]. All Rights Reserved.</p>
+            <p>&copy; 2024 Yusuff Okikiola. All Rights Reserved.</p>
         </div>
     </footer>
 
